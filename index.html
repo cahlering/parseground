@@ -2,7 +2,7 @@
 <head>
 <script src="scripts/parse-1.2.18.js"></script>
 <script>
-Parse.initialize("", "");
+Parse.initialize("sYwJeYfzuVG6LTMjedJVSbwXuih2A4oKWFQAoVbw", "dsMEfnc7BjhLpAWkWdr5yLMBcTJt63KjyUdwEMfR" );
 
 window.fbAsyncInit = function() {
   Parse.FacebookUtils.init({
@@ -14,23 +14,24 @@ window.fbAsyncInit = function() {
   });
  
 // Additional initialization code here
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log('Logged in.');
-  }
-  else {
-    FB.login();
-  }
-});
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      console.log('Logged in.');
+    }
+    else {
+      FB.login();
+    }
+  });
 };
+
+(function(d, s, id){
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) {return;}
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
 </script>
 </head>
 <body>
