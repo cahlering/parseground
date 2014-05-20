@@ -20,7 +20,18 @@ window.fbAsyncInit = function() {
       console.log('Logged in.');
     }
     else {
-      FB.login();
+      Parse.FacebookUtils.logIn("public_profile,email,user_friends", {
+      	success: function(user) {
+      		if (!user.existed()) {
+      			console.log("user was created.");
+      		} else {
+      			console.log("user logged in");
+      		}
+      	},
+        error: function(user, error) {
+        	console.log("User cancelled or did not authorize");
+        }
+      });
     }
   });
 };
@@ -29,7 +40,7 @@ window.fbAsyncInit = function() {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) {return;}
 js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js";
+js.src = "//connect.facebook.net/en_US/sdk/debug.js";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
