@@ -1,1 +1,40 @@
+<html>
+<head>
+<script src="scripts/parse-1.2.18.js"></script>
+<script>
+Parse.initialize("", "");
+
+window.fbAsyncInit = function() {
+  Parse.FacebookUtils.init({
+    appId      : '1433037453621234', // Facebook App ID
+    channelUrl : '//cahlering.github.io/parseground/channel.html', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow Parse to access the session
+    xfbml      : true  // parse XFBML
+  });
+ 
+// Additional initialization code here
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log('Logged in.');
+  }
+  else {
+    FB.login();
+  }
+});
+};
+</script>
+</head>
+<body>
 Hello, world!!
+
+</body>
+</html>
