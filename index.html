@@ -11,7 +11,7 @@ window.fbAsyncInit = function() {
     status     : true, // check login status
     cookie     : true, // enable cookies to allow Parse to access the session
     xfbml      : true,  // parse XFBML
-    version    : "v1.0"
+    version    : 'v2.0'
   });
  
 // Additional initialization code here
@@ -29,7 +29,7 @@ window.fbAsyncInit = function() {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) {return;}
 js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=xxxx&version=v2.0";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
